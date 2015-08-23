@@ -53,8 +53,28 @@
     					<td>user1@example.com</td>    					
     					<td>Address of user 1</td>
     				</tr>
+    				<tr>
+    					<td>2</td>
+    					<td>User 2</td>
+    					<td>user2@example.com</td>    					
+    					<td>Address of user 2</td>
+    				</tr>
+    				<tr>
+    					<td>3</td>
+    					<td>User 3</td>
+    					<td>user3@example.com</td>    					
+    					<td>Address of user 3</td>
+    				</tr>
     			</tbody>
     		</table>
+
+    		<nav class='text-center'>
+    			<ul class="pagination">
+    				<li><a href="">1</a></li>
+    				<li><a href="">2</a></li>
+    				<li><a href="">3</a></li>
+    			</ul>
+    		</nav>
     	</div>
     </div>
 
