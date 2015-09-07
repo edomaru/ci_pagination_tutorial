@@ -10,14 +10,8 @@ class Contacts extends CI_Controller {
 		$query = $this->contact->all($this->limit);
 		$total_rows = $this->contact->count();		
 
-		$config['base_url'] = site_url("contacts/index");
-		$config['total_rows'] = $total_rows;
-		$config['uri_segment'] = 3;
-		$config['per_page'] = $this->limit;
-
-		$this->load->library('pagination');		
-		$this->pagination->initialize($config);
-		$pagination_links = $this->pagination->create_links();
+		$this->load->helper('app');
+		$pagination_links = pagination($total_rows, $this->limit, "contacts/index");
 
 		$this->load->view('header');
 		$this->load->view('index', compact('query', 'pagination_links'));
@@ -30,14 +24,8 @@ class Contacts extends CI_Controller {
 		$query = $this->contact->all($this->limit);
 		$total_rows = $this->contact->count();
 
-		$config['base_url'] = site_url("contacts/ajax");
-		$config['total_rows'] = $total_rows;
-		$config['uri_segment'] = 3;
-		$config['per_page'] = $this->limit;
-
-		$this->load->library('pagination');		
-		$this->pagination->initialize($config);
-		$pagination_links = $this->pagination->create_links();
+		$this->load->helper('app');
+		$pagination_links = pagination($total_rows, $this->limit, "contacts/ajax");
 
 		if ( ! $this->input->is_ajax_request()) $this->load->view('header');
 		$this->load->view('ajax', compact('query', 'pagination_links'));
