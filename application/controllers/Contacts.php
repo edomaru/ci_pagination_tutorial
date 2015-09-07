@@ -11,7 +11,7 @@ class Contacts extends CI_Controller {
 		$total_rows = $this->contact->count();		
 
 		$this->load->helper('app');
-		$pagination_links = pagination($total_rows, $this->limit, "contacts/index");
+		$pagination_links = pagination($total_rows, $this->limit);
 
 		$this->load->view('header');
 		$this->load->view('index', compact('query', 'pagination_links'));
@@ -25,7 +25,7 @@ class Contacts extends CI_Controller {
 		$total_rows = $this->contact->count();
 
 		$this->load->helper('app');
-		$pagination_links = pagination($total_rows, $this->limit, "contacts/ajax");
+		$pagination_links = pagination($total_rows, $this->limit);
 
 		if ( ! $this->input->is_ajax_request()) $this->load->view('header');
 		$this->load->view('ajax', compact('query', 'pagination_links'));
