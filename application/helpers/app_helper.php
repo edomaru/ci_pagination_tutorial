@@ -12,10 +12,10 @@ if ( ! function_exists('pagination') )
 			$url = implode("/", $segment);
 		}
 
-		$config['base_url'] = site_url($url);
-		$config['total_rows'] = $total_rows;
+		$config['base_url']    = site_url($url);
+		$config['total_rows']  = $total_rows;
 		$config['uri_segment'] = $uri_segment;
-		$config['per_page'] = $per_page;
+		$config['per_page']    = $per_page;
 
 		$ci->load->library('pagination');		
 		$ci->pagination->initialize($config);

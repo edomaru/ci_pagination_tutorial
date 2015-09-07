@@ -28,12 +28,3 @@
 		<li><a href="">3</a></li>
 	</ul> -->
 </nav>
-
-<script>
-    $("body").on("click", ".pagination a", function() {
-        var url = $(this).attr('href');
-        $("#the-content").load(url);
-        return false;
-    });
-</script>
-
