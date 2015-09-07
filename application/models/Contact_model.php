@@ -8,13 +8,12 @@ class Contact_model extends CI_Model {
 	{
 		$this->db->limit($limit);
 		$this->db->offset($this->uri->segment(3));
-		$this->db->get($this->table);
+		return $this->db->get($this->table);
 	}
 
 	public function count()
 	{
-		$this->db->count_all_results();
-		$this->db->get($this->table);	
+		return $this->db->count_all_results($this->table);		
 	}
 
 }
